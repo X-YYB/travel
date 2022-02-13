@@ -9,12 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>x-ganen-pojo</artifactId>
-
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+    <artifactId>x-ganen-framework</artifactId>
 
     <dependencies>
         <dependency>
@@ -22,5 +17,9 @@
             <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
 </project>

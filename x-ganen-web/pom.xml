@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>com.young.xganen</groupId>
-            <artifactId>x-ganen-service</artifactId>
+            <artifactId>x-ganen-framework</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

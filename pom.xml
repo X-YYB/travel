@@ -28,11 +28,9 @@
 -->
     <modules>
         <module>x-ganen-commons</module>
-        <module>x-ganen-pojo</module>
-        <module>x-ganen-service</module>
-        <module>x-ganen-mapper</module>
         <module>x-ganen-web</module>
         <module>x-ganen-web-app</module>
+        <module>x-ganen-framework</module>
     </modules>
 
 <!--    dependencyManagement:依赖管理，里面管理所有子模块的具体依赖

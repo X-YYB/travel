@@ -8,12 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="x-ganen-web-app" />
-        <module name="x-ganen-pojo" />
-        <module name="x-ganen-service" />
+        <module name="framework" />
+        <module name="x-ganen-framework" />
         <module name="x-ganen-commons" />
-        <module name="x-ganen-mapper" />
         <module name="x-ganen-web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="framework" target="8" />
+      <module name="x-ganen-mapper" target="8" />
+      <module name="x-ganen-pojo" target="8" />
+      <module name="x-ganen-service" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
