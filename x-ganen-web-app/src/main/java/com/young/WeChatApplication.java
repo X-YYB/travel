@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class WeChatApplication {
 
-    /*启动类1.0*/
+    /*启动类1.0，测试*/
     public static void main(String[] args){
         SpringApplication.run(WeChatApplication.class);
     }
