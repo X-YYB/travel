@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+<!--    把springboot作为父工程-->
+<!--    <parent>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-dependencies</artifactId>-->
+<!--        <version>2.6.2</version>-->
+<!--    </parent>-->
+
+    <groupId>com.young.xganen</groupId>
+    <artifactId>x-ganen-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!--父工程-->
+    <packaging>pom</packaging>
+
+<!--
+    modules: 模块 代表的一个子模块，未来如果编译父工程的时候，就会自动编译里面所有的子模块
+    体现maven的父子模块的一种机制
+    maven核心机制：聚合和依赖管理
+    聚合：是指把项目的各个模块当做一个个字模块交由父模块来管理
+    以前那种前后端不分离的项目是每个模块单独去打包
+    用了聚合工程以后：可以把所有的子模块的打包全部交由父工程来统一打包
+
+    依赖管理：统一解决项目依赖jar包的升级
+-->
+    <modules>
+        <module>x-ganen-commons</module>
+        <module>x-ganen-pojo</module>
+        <module>x-ganen-service</module>
+        <module>x-ganen-mapper</module>
+        <module>x-ganen-web</module>
+        <module>x-ganen-web-app</module>
+    </modules>
+
+<!--    dependencyManagement:依赖管理，里面管理所有子模块的具体依赖
+      好处1：在父工程中dependencyManagement定义所有子模块的依赖，可以做到统一升级技术栈的目的
+      好处2：在父工程的dependencyManagement定义所有子模块的依赖，子模块不需要指定版本号
+-->
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <java.version>1.8</java.version>
+        <mysql.version>8.0.26</mysql.version>
+        <lombok.version>1.18.20</lombok.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.6.2</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--
+       继承依赖： 每个子模块自动获取，是公共依赖
+       这个在开发中一定少用，建议不用。
+       一般来说在项目中根本没有这种依赖，如果硬要加两个：lombok和测试经常会看到。
+    -->
+   <!-- <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+    </dependencies>-->
+
+</project>
